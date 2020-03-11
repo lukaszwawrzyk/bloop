@@ -33,8 +33,7 @@ import xsbti.compile.CompileOrder
 import scala.util.{Try, Success, Failure}
 import java.util.concurrent.ConcurrentHashMap
 import java.nio.file.StandardCopyOption
-
-object BloopPlugin extends AutoPlugin {
+==dobject BloopPlugin extends AutoPlugin {
   import sbt.plugins.JvmPlugin
   override def requires = JvmPlugin
   override def trigger = allRequirements

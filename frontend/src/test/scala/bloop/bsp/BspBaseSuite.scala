@@ -523,6 +523,16 @@ abstract class BspBaseSuite extends BaseSuite with BspClientTest {
       bloopExtraParams: BloopExtraBuildParams = BloopExtraBuildParams.empty,
       compileStartPromises: Option[mutable.HashMap[bsp.BuildTargetIdentifier, Promise[Unit]]] = None
   )(runTest: ManagedBspTestState => Unit): Unit = {
+    case class Item(name: String, amount: Int, price: Double)
+    java.util.Arrays
+      .asList(Item("", 1, 1.0))
+      .stream()
+      .reduce[Double](
+        0.0,
+        (acc: Double, item: Item) => acc + item.price * item.amount,
+        (_: Double) + _
+      )
+
     val bspLogger = new BspClientLogger(logger)
     val configDir = TestProject.populateWorkspace(workspace, projects)
     val bspCommand = createBspCommand(configDir)

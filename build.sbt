@@ -562,7 +562,7 @@ lazy val sbtBloop013 = project
 
 lazy val sbtBloop013Shaded =
   defineShadedSbtPlugin("sbtBloop013Shaded", Sbt013Version, sbtBloop013).settings(
-    scalaVersion := (scalaVersion in sbtBloop013).value,
+    scalaVersion := (scalaVersion in sbtBloop013).value
   )
 
 lazy val mavenBloop = project
@@ -808,7 +808,7 @@ val bloop = project
             sbtBloop013Shaded,
             sbtBloop10Shaded,
             mavenBloop,
-            gradleBloop211,
+//            gradleBloop211,
             gradleBloop212,
             millBloop,
             nativeBridge03,
